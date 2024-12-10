@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片无损放大工具</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>图片无损放大工具</h1>
+        <div class="settings">
+            <label>放大倍数:</label>
+            <select id="scale">
+                <option value="2">2x</option>
+                <option value="4">4x</option>
+            </select>
+        </div>
+        <div class="preview">
+            <div class="original">
+                <h3>原始图片</h3>
+                <div class="image-container">
+                    <input type="file" id="imageInput" accept="image/*">
+                    <label for="imageInput" class="upload-area">
+                        <div class="upload-icon">+</div>
+                        <div class="upload-text">点击选择或拖拽图片</div>
+                    </label>
+                    <img id="originalImage" src="" alt="原始图片">
+                </div>
+                <div class="image-info" id="originalInfo">
+                    <p>尺寸: -- x -- px</p>
+                    <p>文件大小: -- KB</p>
+                </div>
+            </div>
+            <div class="result">
+                <h3>放大后图片</h3>
+                <div class="image-container">
+                    <div class="empty-state">
+                        <p>请先选择图片并点击放大按钮</p>
+                    </div>
+                    <img id="resultImage" src="" alt="放大后图片">
+                </div>
+                <div class="image-info" id="resultInfo">
+                    <p>尺寸: -- x -- px</p>
+                    <p>文件大小: -- KB</p>
+                </div>
+            </div>
+        </div>
+        <div id="loading" style="display: none;">
+            <p>图片处理中，请稍候...</p>
+        </div>
+        <div class="actions">
+            <button id="enlargeBtn" class="enlarge-btn">开始放大</button>
+            <button id="downloadBtn" class="download-btn">下载图片</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
